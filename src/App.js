@@ -12,8 +12,25 @@ function App() {
         <main>
           <Dictionary />
         </main>
-        <footer className="App-footer text-center">
-          <small>Coded by Shecodes ❤️ </small>
+        <footer className="App-footer">
+          <small>
+            📖 Coded by Thais Roome, open-sourced on{" "}
+            <a
+              href="https://github.com/thais-roome/dictionary-app-project"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Github
+            </a>{" "}
+            and hosted on{" "}
+            <a
+              href="https://zippy-sunburst-acc8cb.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Netlify.
+            </a>
+          </small>{" "}
         </footer>
       </div>
     </div>
