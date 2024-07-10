@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Results from "./Results";
 import Photos from "./Photos";
 import "./Dictionary.css";
+import Results from "./Results";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("sunset");
@@ -10,23 +10,22 @@ export default function Dictionary() {
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
 
-  function handleShecodesResponse(response) {
+  function handleSheCodesResponse(response) {
     setPhotos(response.data.photos);
   }
 
   function search() {
-    // documentation : https://dictionaryapi.dev/ //
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
 
-    let shecodesApiKey = "dd5d4dt911e62a0b832b58o66f3ab4f3";
-    let shecodesApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${shecodesApiKey}`;
+    axios.get(apiUrl).then(handleDictionaryResponse);
 
-    axios.get(shecodesApiUrl).then(handleShecodesResponse);
+    let sheCodesApiKey = "bfebe20e536f474847ab0co02fa8tf40";
+    let sheCodesApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${sheCodesApiKey}`;
+    axios.get(sheCodesApiUrl).then(handleSheCodesResponse);
   }
 
   function handleSubmit(event) {

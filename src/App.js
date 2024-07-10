@@ -1,8 +1,8 @@
 import logo from "./logo-shecodes.png";
 import "./App.css";
-import Dictionary from "./Dictionary.js";
+import Dictionary from "./Dictionary";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
@@ -24,7 +24,7 @@ function App() {
             </a>{" "}
             and hosted on{" "}
             <a
-              href="https://zippy-sunburst-acc8cb.netlify.app/"
+              href="https://thais-szimanski-portfolio.netlify.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -36,5 +36,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
